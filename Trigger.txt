@@ -1,0 +1,21 @@
+OnCollisionEnter(Collision collision) : 충돌 순간
+OnCollisionStay(Collision collision) : 충돌하는 동안
+OnCollisionExit(Collision collision) : 충돌했다가 분리되는 순간
+-> 충돌한 상대방 게임 오브젝트, 충돌지점, 충돌 표면의 방향등을 알 수 있음
+
+
+OnTriggerEnter(Collider other) : 충돌 순간 
+OnTriggerStay(Collider other) : 충돌하는 동안 
+OnTriggerExit(Collider other) : 충돌했다가 분리되는 순간
+-> 충돌한 상대방 게임 오브젝트(의 콜라이더 컴포넌트)를 받음
+
+예)
+if(other.tag == "Player")
+{
+   PlayerController playerController = other.GetComponent<PlayerController>();
+
+   if(playerContorller != null)
+     {
+         playerController.Die();
+     }
+}
